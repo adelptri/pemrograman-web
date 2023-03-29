@@ -1,0 +1,29 @@
+<html>
+    <head>
+        <title>Hallo world, welcome to my javascript</title>
+    </head>
+    <body>
+        <script>
+           var tugas=prompt("input nilai tugas=",0);
+           document.write("nilai tugas=" + tugas +"<br>");
+           var uts=prompt("input nilai uts=",0);
+           document.write("nilai uts=" + uts +"<br>");
+           var uas=prompt("input nilai uas=",0);
+           document.write("nilai uas=" + uas +"<br>");
+           var nilaiakhir=(tugas*0.3) + (uts*0.3) + (uas*0.4);
+           document.write("nilai akhir=" + nilaiakhir +"<br>");
+           if(nilaiakhir>=80){
+                document.write("indeks nilai= A<br>");
+           } else  if(nilaiakhir>=70){
+                document.write("indeks nilai= B<br>");
+           } else  if(nilaiakhir>=55){
+                document.write("indeks nilai= C<br>");
+           } else  if(nilaiakhir>=45){
+                document.write("indeks nilai= D<br>");
+           } else{
+                document.write("indeks nilai= E<br>");
+           }
+           console.log("kalau ga ada tulisan anda lulus, ya berarti tidak lulus"); 
+           </script>
+    </body>
+</html>
