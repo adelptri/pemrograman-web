@@ -1,16 +1,32 @@
 <?php
-function informasi($matkul, $materi="Review UTS"){
-    echo "Helo,";
-    echo "Saya Sedang Belajar". $matkul."<br/>";
-    echo "Saat ini saya belajar menggunakan function". $materi."<br/>";
+function penyebut($nilai) {
+ $nilai = abs($nilai);
+ $huruf = array("", "satu", "dua", "tiga", "empat", "lima", "enam",
+"tujuh", "delapan", "sembilan", "sepuluh", "sebelas");
+ $temp = "";
+ if ($nilai < 12) {
+ $temp = " ". $huruf[$nilai];
+ } else if ($nilai <20) {
+ $temp = penyebut($nilai - 10). " belas";
+ } else if ($nilai < 100) {
+ $temp = penyebut($nilai/10)." puluh". penyebut($nilai % 10);
+ } else if ($nilai < 200) {
+ $temp = " seratus" . penyebut($nilai - 100);
+ } else if ($nilai < 1000) {
+ $temp = penyebut($nilai/100) . " ratus" . penyebut($nilai %
+100);
+ } else if ($nilai < 2000) {
+ $temp = " seribu" . penyebut($nilai - 1000);
+ } else if ($nilai < 1000000) {
+ $temp = penyebut($nilai/1000) . " ribu" . penyebut($nilai %
+1000);
+ } else if ($nilai < 1000000000) {
+ $temp = penyebut($nilai/1000000) . " juta" . penyebut($nilai %
+1000000);
+ }
+ return $temp;
 }
-//memanggil fungsi yang sudah dibuat
-informasi ("Pemrograman Berbasis Web","Function di PHP");
-
-echo "<hr/>";
-
-$matkul = "Basis Data";
-$materi = "Instalasi DBMS";
-//memanggil lagi 
-informasi ($matkul);
+$angka=12345;
+$terbilang=penyebut($angka);
+echo $angka." = ".$terbilang;
 ?>
